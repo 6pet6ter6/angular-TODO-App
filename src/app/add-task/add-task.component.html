@@ -1,0 +1,14 @@
+<form [formGroup]="addTaskForm" (ngSubmit)="addTask()">
+  <div>
+    <label>Beschreibung</label>
+    <input formControlName="description" type="text"/>
+  </div>
+
+  <div>
+    <label>Datum</label>
+    <input formControlName="dateTime" type="date"/>
+  </div>
+  <div>
+    <input type="submit" value="Erstellen" />
+  </div>
+</form>
