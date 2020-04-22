@@ -6,6 +6,8 @@ import {Task} from './task';
 })
 export class TaskService {
 
+  tasks: Task[];
+
   constructor() { }
 
   addTask(taskModel: Task) {
@@ -16,19 +18,17 @@ export class TaskService {
     localStorage.removeItem(itemId);
   }
 
+  reset() {
+    localStorage.clear();
+  }
+
   getTasks(): Task[] {
+    this.tasks = []
     for (let i = 0; i < localStorage.length; i++) {
-
-      // set iteration key name
       const key = localStorage.key(i);
-
-      // use key name to retrieve the corresponding value
       const value = localStorage.getItem(key);
-
-      // console.log the iteration key and value
-      console.log('Key: ' + key + ', Value: ' + value);
-
+      this.tasks.push(JSON.parse(value));
     }
-    return [];
+    return this.tasks;
   }
 }

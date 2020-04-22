@@ -7,6 +7,7 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { TaskComponent } from './task/task.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,12 @@ import {ReactiveFormsModule} from '@angular/forms';
     TaskListComponent,
     TaskComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule
-    ],
+  imports: [
+      BrowserModule,
+      AppRoutingModule,
+      ReactiveFormsModule,
+      FlexLayoutModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

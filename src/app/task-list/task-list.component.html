@@ -1,1 +1,9 @@
-<p>task-list works!</p>
+<div fxLayout="row wrap" fxLayout.xs="column wrap">
+  <div fxFlex.gt-xs="33%" [fxFlex.gt-md]="100 / 6 + '%'" *ngFor="let task of getTasks()" class="item">
+    <div class="chip">
+      <span>{{task.description}}</span>
+      <span (click)="removeTask(task.id)" class="closebtn">&times;</span>
+    </div>
+  </div>
+</div>
+
